@@ -20,7 +20,7 @@ public:
     HasPtr& operator=(const HasPtr &hp) {
         std::string *new_ps = new std::string(*hp.ps);
         delete ps;
-        ps = new_ps;
+        ps = new_ps; 
         i = hp.i;
         return *this;
     }
@@ -31,5 +31,8 @@ private:
     std::string *ps;
     int i;
 };
+
+//Wondering why ps = new_ps was used instead of ps = new std::string(*hp.ps) in line 23? 
+//See here: http://www.cplusplus.com/forum/beginner/193494/
 
 #endif
